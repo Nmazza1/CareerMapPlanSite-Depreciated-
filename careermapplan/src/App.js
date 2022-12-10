@@ -1,8 +1,5 @@
 
-import PrereqsSection from "./components/PrereqsSection";
-import bannerPhoto from './champlain2.png';
-import Navbar from "./components/Navbar";
-import CRUDPage from "./components/CRUDPage";
+
 import Footer from "./components/Footer";
 import { useState } from "react";
 import SchoolCard from "./components/SchoolCard";
@@ -59,7 +56,8 @@ const clickedSouth = (event)=>{
 
 
   return (
-    <div className="flex flex-col min-h-screen bg-neutral-800">
+    <div className="bg-neutral-800">
+      <div className="flex flex-col min-h-screen">
 
       <div className="flex justify-center bg-neutral-800 flex flex-none p-4">         
          <div className="text-4xl text-slate-50 font-serif">{onMain? 'Career Map Plan' : 'School Courses Dev Page'}</div>      
@@ -91,12 +89,56 @@ const clickedSouth = (event)=>{
       tookChemistry={tookChemistry}
       setChemistry={setChemistry}
       />
+
+     
+
+      <div className="grid grid-cols-4 gap-4 bg-white mx-6 my-4 rounded-md h-72 px-2 overflow-y-auto">
+        <SchoolCard
+        schoolName="Champlain College St-Lambert"
+        course="Computer Science"
+        courseLink="https://www.champlainsaintlambert.ca/career-programs/computer-science-technology/"
+        schoolImgCard="https://i.ibb.co/Z6wq8Hs/champlain2.png"/>
+
+<SchoolCard
+        schoolName="Champlain College St-Lambert"
+        course="Computer Science"
+        courseLink="https://www.champlainsaintlambert.ca/career-programs/computer-science-technology/"
+        schoolImgCard="https://i.ibb.co/Z6wq8Hs/champlain2.png"/>
+
+<SchoolCard
+        schoolName="Champlain College St-Lambert"
+        course="Computer Science"
+        courseLink="https://www.champlainsaintlambert.ca/career-programs/computer-science-technology/"
+        schoolImgCard="https://i.ibb.co/Z6wq8Hs/champlain2.png"/>
+
+<SchoolCard
+        schoolName="Champlain College St-Lambert"
+        course="Computer Science"
+        courseLink="https://www.champlainsaintlambert.ca/career-programs/computer-science-technology/"
+        schoolImgCard="https://i.ibb.co/Z6wq8Hs/champlain2.png"/>
+
+<SchoolCard
+        schoolName="Champlain College St-Lambert"
+        course="Computer Science"
+        courseLink="https://www.champlainsaintlambert.ca/career-programs/computer-science-technology/"
+        schoolImgCard="https://i.ibb.co/Z6wq8Hs/champlain2.png"/>
+
+<SchoolCard
+        schoolName="Champlain College St-Lambert"
+        course="Computer Science"
+        courseLink="https://www.champlainsaintlambert.ca/career-programs/computer-science-technology/"
+        schoolImgCard="https://i.ibb.co/Z6wq8Hs/champlain2.png"/>
+      </div>      
+  
       </>
+
     }
   
     <Footer
     onMain = {onMain}
     setMainPage = {setMainPage}/>
+
+      </div>
     </div>
 
   );

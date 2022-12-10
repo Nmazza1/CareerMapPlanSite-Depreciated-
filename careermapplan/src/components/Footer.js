@@ -1,6 +1,6 @@
 function Footer({onMain, setMainPage}){
     return(
-        <div className="flex justify-between border-t-1 bg-neutral-800 p-4 text-sm font-serif italic text-slate-200">
+        <div className="flex justify-between border-t-1 bg-neutral-800 p-4 text-sm font-serif italic text-slate-200 mt-auto">
             <div className="text-left pl-12">
                 <p>Have any questions or suggestions?<br/>
                     Feel free to contact us with them!
