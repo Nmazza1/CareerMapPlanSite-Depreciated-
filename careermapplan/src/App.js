@@ -5,6 +5,8 @@ import { useState } from "react";
 import SchoolCard from "./components/SchoolCard";
 import RegionButton from "./components/RegionButton";
 import PrereqsButton from "./components/PrereqsButtons";
+import CRUDPage from "./components/CRUDPage";
+import CRUDButtons from "./components/CRUDButtons";
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
 
 
   const [selectedRegionMap, setRegionMap] = useState("https://i.ibb.co/6ZS2wCf/montreal-map.png");
+
+  const [buttonPress, setButtonPress] = useState("");
 
 
   const clickedNorth = (event)=>{
@@ -54,7 +58,6 @@ const clickedSouth = (event)=>{
     setRegion("South Shore");
 }
 
-
   return (
     <div className="bg-neutral-800">
       <div className="flex flex-col min-h-screen">
@@ -62,21 +65,28 @@ const clickedSouth = (event)=>{
       <div className="flex justify-center bg-neutral-800 flex flex-none p-4">         
          <div className="text-4xl text-slate-50 font-serif">{onMain? 'Career Map Plan' : 'School Courses Dev Page'}</div>      
       </div>
-     
-      <div>
-      <RegionButton
-      clickedNorth={clickedNorth}
-      clickedLaval={clickedLaval}
-      clickedSouth={clickedSouth}
-      clickedMontreal={clickedMontreal}
-      selectedRegionMap={selectedRegionMap}
-      selectedRegion={region}/>
-      </div>
 
     {
-      selectedRegion &&
+      onMain &&
+      
+
+
       <>
-      <PrereqsButton
+          <div>
+        <RegionButton
+        clickedNorth={clickedNorth}
+        clickedLaval={clickedLaval}
+        clickedSouth={clickedSouth}
+        clickedMontreal={clickedMontreal}
+        selectedRegionMap={selectedRegionMap}
+        selectedRegion={region}/>
+        </div>
+
+      {
+        selectedRegion &&
+
+        <>
+        <PrereqsButton
       tookHighMath={tookHighMath}
       setHighMath={setHighMath}
 
@@ -92,7 +102,7 @@ const clickedSouth = (event)=>{
 
      
 
-      <div className="grid grid-cols-4 gap-4 bg-white mx-6 my-4 rounded-md h-72 px-2 overflow-y-auto">
+      <div className="grid grid-cols-4 gap-4 bg-white mx-6 my-4 rounded-md px-2 pb-2">
         <SchoolCard
         schoolName="Champlain College St-Lambert"
         course="Computer Science"
@@ -129,9 +139,25 @@ const clickedSouth = (event)=>{
         courseLink="https://www.champlainsaintlambert.ca/career-programs/computer-science-technology/"
         schoolImgCard="https://i.ibb.co/Z6wq8Hs/champlain2.png"/>
       </div>      
+
+      </>
+      }
+      
   
       </>
 
+    }
+
+    {
+      !onMain &&
+      <>
+        <CRUDButtons
+        buttonPress={buttonPress}
+        setButtonPress={setButtonPress}/>
+        <CRUDPage
+        buttonPress={buttonPress}
+        />
+      </>
     }
   
     <Footer
