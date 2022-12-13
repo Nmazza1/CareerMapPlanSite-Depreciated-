@@ -4,6 +4,7 @@ import com.careersite.careersitemapplan.entity.Course;
 import com.careersite.careersitemapplan.request.CourseRequest;
 import com.careersite.careersitemapplan.response.CourseResponse;
 import com.careersite.careersitemapplan.service.CourseService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -38,5 +39,17 @@ public class CourseController {
         Course course = courseService.insertCourse(courseRequest);
 
         return new CourseResponse(course);
+    }
+
+    @PutMapping("/{id}")
+    public Course updateCourse(@PathVariable long id, @Valid @RequestBody CourseRequest courseRequest){
+        Course course = courseService.updateCourse(id, courseRequest);
+
+        return course;
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteCourse(@PathVariable long id){
+        courseService.deleteCourse(id);
     }
 }
