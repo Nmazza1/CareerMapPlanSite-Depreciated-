@@ -14,7 +14,6 @@ import lombok.Setter;
 public class School {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idschool")
     private long id;
 
     @Column(name = "school_name", nullable = false)

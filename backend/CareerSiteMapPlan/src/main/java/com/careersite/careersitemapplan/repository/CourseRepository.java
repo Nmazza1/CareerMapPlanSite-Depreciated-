@@ -23,7 +23,7 @@ public interface CourseRepository extends CrudRepository <Course, Long>, QueryBy
     List<Course> findAllBySchool_Region(@Param("region") String region);
 
     @Query(value =
-     "SELECT * FROM COURSES INNER JOIN Schools ON Courses.school_id=Schools.id" +
+     "SELECT * FROM COURSES INNER JOIN Schools ON Courses.idschool=Schools.id" +
              "  WHERE BITOR(prerequisite , CAST(:prereq AS INTEGER )) <= CAST(:prereq AS INTEGER)" +
              " AND Region = :region"
             , nativeQuery = true)
@@ -32,10 +32,10 @@ public interface CourseRepository extends CrudRepository <Course, Long>, QueryBy
     List<Course> findAllByPrerequisiteAndSchool_Region(@Param("prereq") Integer prereq, @Param("region") String region);
 
 
-    @Query(value = "SELECT Course_Link, Course_Name, Prerequisite, Schools.idschool, Schools.School_Name, Schools.Region " +
+    @Query(value = "SELECT Course_Link, Course_Name, Prerequisite, Schools.id, Schools.School_Name, Schools.Region " +
             "FROM COURSES" +
             " INNER JOIN Schools" +
-            " ON Courses.idschool = Schools.idschool" +
+            " ON Courses.idschool = Schools.id" +
             " WHERE BITOR(prerequisite , CAST(:prereq AS INTEGER )) <= CAST(:prereq AS INTEGER)" +
             "AND Region = :region " +
             "AND Schools.idschool = :idschool"

@@ -22,7 +22,7 @@ public class CourseService {
 
         if(!(prerequisite == null || prerequisite.describeConstable().isEmpty()) && !(region == null || region.isEmpty()))
         {
-            return courseRepository.findAllByPrerequisiteAndSchool_RegionAndIdSchool(prerequisite, region,school_id );
+            return courseRepository.findAllByPrerequisiteAndSchool_RegionAndSchool_Id(prerequisite, region,school_id );
         }
        else if(!(prerequisite == null || prerequisite.describeConstable().isEmpty()))
         {
