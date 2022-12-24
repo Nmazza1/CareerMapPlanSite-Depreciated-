@@ -38,7 +38,7 @@ public interface CourseRepository extends CrudRepository <Course, Long>, QueryBy
             " ON Courses.idschool = Schools.id" +
             " WHERE BITOR(prerequisite , CAST(:prereq AS INTEGER )) <= CAST(:prereq AS INTEGER)" +
             "AND Region = :region " +
-            "AND Schools.idschool = :idschool"
+            "AND Schools.id = :idschool"
 
             , nativeQuery = true)
     List<Course> findAllByPrerequisiteAndSchool_RegionAndSchool_Id(@Param("prereq") Integer prereq,
