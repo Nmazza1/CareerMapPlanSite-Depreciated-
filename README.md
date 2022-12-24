@@ -1,24 +1,24 @@
 # Career Map Plan
-This project is based on the idea of input Credits for courses taken by a student, and dynamically displaying the available programs on a front end developed with ReactJS. The front end calls to an API hosted on a local machine using the H2 database which stores data on Schools in the Greater Montreal Region and subsequent courses for these schools.
+This project is based on the idea of inputing Credits for courses taken by a student, and dynamically displaying the available programs on a front end developed with ReactJS. The front end calls to an API hosted on a local machine using the H2 database which stores data on Schools in the Greater Montreal Region and subsequent courses for these schools.
 
 ## How to Run the Project
 Download the current version of the repository and enter the directory of **careermapplan**. Once inside copy the direct path and open the command prompt.
 Enter the Following:
->cd **direct path to careermapplan**
->npm install --force
->npm start
+>cd **direct path to careermapplan**  <br>
+>npm install --force  <br>
+>npm start  <br>
 
 ## Future To Do List
 
 Below is a short list of ToDo's ranging from fixes to implementing new features (Credits, Courses, Schools, Regions, etc).
->Fix GET response when filtering by school Id's, Region and Prerequisites
->Fix Mapping of the Region Map on the front end. (Scale is slightly off)
->Consolidate code on the front end (Enhance readability and scalability)
->Add More Courses, Schools, Regions
->Add the ability to switch the focus from College Courses to University  Programs instead of High School to College.
->Add Subsequent University programs
->Optimize backend API calls as much as possible.
->Add additional diagrams to explain Prerequisites and the Binary operations
+>Fix GET response when filtering by school Id's, Region and Prerequisites<br>
+>Fix Mapping of the Region Map on the front end. (Scale is slightly off)  <br>
+>Consolidate code on the front end (Enhance readability and scalability)  <br>
+>Add More Courses, Schools, Regions  <br>
+>Add the ability to switch the focus from College Courses to University  Programs instead of High School to College.<br>
+>Add Subsequent University programs<br>
+>Optimize backend API calls as much as possible.<br>
+>Add additional diagrams to explain Prerequisites and the Binary operations<br>
 
 ## Relationships
 
@@ -48,7 +48,7 @@ Below is a table to visualize the meaning.
 
 A student's Credit "Score" must be equal or greater than the bit represented in the course
 For example,
-1100 (High Math and Science) and
+1100 (High Math and Science) and<br>
 1010 (High Math Chemistry) are not equal as the third digit, does not pass the OR check.
 
 # End Points
