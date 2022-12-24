@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-
-
 function CRUDButtons({buttonPress, setButtonPress}){
 const [clickedButton, setClickedButton] = useState(false);
     

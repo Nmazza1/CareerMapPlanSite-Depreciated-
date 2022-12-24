@@ -1,6 +1,7 @@
 package com.careersite.careersitemapplan.service;
 
 import com.careersite.careersitemapplan.entity.Course;
+import com.careersite.careersitemapplan.entity.School;
 import com.careersite.careersitemapplan.exception.ResourceNotFound;
 import com.careersite.careersitemapplan.repository.CourseRepository;
 import com.careersite.careersitemapplan.request.CourseRequest;
@@ -16,9 +17,42 @@ public class CourseService {
     CourseRepository courseRepository;
 
 
-    public List<Course> getAllCourses(){
+    public List<Course> getAllCoursesForSchool(Long school_id, Integer prerequisite, String region){
 
-        return (List<Course>) courseRepository.findAll();
+
+        if(!(prerequisite == null || prerequisite.describeConstable().isEmpty()) && !(region == null || region.isEmpty()))
+        {
+            return courseRepository.findAllByPrerequisiteAndSchool_RegionAndIdSchool(prerequisite, region,school_id );
+        }
+       else if(!(prerequisite == null || prerequisite.describeConstable().isEmpty()))
+        {
+            return courseRepository.findAllByPrerequisite(prerequisite);
+        }
+        else
+
+
+        {
+            return (List<Course>) courseRepository.findBySchool_Id(school_id);
+        }
+
+    }
+
+    public List<Course> getAllCourses(Integer prerequisite, String region){
+
+
+        if(!(prerequisite == null || prerequisite.describeConstable().isEmpty()) && !(region == null || region.isEmpty()))
+        {
+            return courseRepository.findAllByPrerequisiteAndSchool_Region(prerequisite, region);
+        }
+        else if(!(prerequisite == null || prerequisite.describeConstable().isEmpty()))
+        {
+            return courseRepository.findAllByPrerequisite(prerequisite);
+        }
+        else
+        {
+            return (List<Course>) courseRepository.findAll();
+        }
+
     }
 
     public Course insertCourse(CourseRequest courseRequest){
