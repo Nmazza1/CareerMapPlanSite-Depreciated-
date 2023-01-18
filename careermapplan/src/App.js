@@ -9,6 +9,7 @@ import CRUDPage from "./components/CRUDPage";
 import CRUDButtons from "./components/CRUDButtons";
 import axios from "axios";
 import EditPageButtons from "./components/EditPageButtons";
+import IntroPage from "./components/IntroPage";
 
 function App() {
 
@@ -216,6 +217,9 @@ const clickedSouth = (event)=>{
   
   
   return (
+    <div>
+
+    {/*
     <div className="bg-neutral-800">
       <div className="flex flex-col min-h-screen">
 
@@ -303,6 +307,11 @@ const clickedSouth = (event)=>{
 
       </div>
     </div>
+  *
+ 
+  */}
+  <IntroPage/>
+  </div>
 
   );
 }
